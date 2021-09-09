@@ -13,5 +13,7 @@ The Channel Engine expects that the Stream Switch Manager API implements the fol
 
 Resource | Method | Request Payload | Response Payload | Description
 -------- | ------ | --------------- | ---------------- | -----------
-/breaking | POST | EVENT JSON | n/a | Append payload to local schedule list 
-/schedule | GET | n/a | LIST of EVENT JSON | Return a schedule list. A list containing EVENT objects
+/breaking | POST | EVENT JSON | n/a | Add event data to a channel specific schedule list.
+/schedule | GET | n/a | LIST of EVENT JSON | Return all schedule lists. Lists containing EVENT objects.
+/schedule/:channelId | GET | n/a | LIST of EVENT JSON | Return a schedule list for a particular channel. A list containing EVENT objects.
+/schedule/:channelId | DELETE | n/a | LIST of EVENT JSON | Delete a list for a particular channel.
