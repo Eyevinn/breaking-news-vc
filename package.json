@@ -1,0 +1,40 @@
+{
+  "name": "breaking-news-vc",
+  "version": "1.0.0",
+  "description": "This Application to be used together with the Eyevinn Channel-Engine V3 as its `StreamSwitchManager`. This is a simple example implementation for a stream switch manager that enables\r a quick switch to a Live stream with a single API call.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -L server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eyevinn/breaking-news-vc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eyevinn/breaking-news-vc/issues"
+  },
+  "homepage": "https://github.com/Eyevinn/breaking-news-vc#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fastify": "^3.21.0",
+    "fastify-cors": "^6.0.2",
+    "fastify-plugin": "^3.0.0",
+    "fastify-swagger": "^4.11.0",
+    "path": "^0.12.7",
+    "util": "^0.10.4",
+    "uuid": "^3.4.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "fast-xml-parser": "^3.19.0",
+    "nodemon": "^2.0.7",
+    "tap": "^15.0.4"
+  }
+}
