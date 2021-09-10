@@ -42,7 +42,7 @@ Resource | Method | Request Payload | Response Payload | Description
     "title": "Breaking News 9/12/2021: A Miracle in Disneyland!",
     "type": 1,
     "start_time": 1631290137166,
-    "end_time": 1631295137166,
+    "end_time": 1631435137166,
     "uri": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8",
     "duration": 30000
   }
