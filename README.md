@@ -15,6 +15,9 @@ This could be used to emulate breaking into a live news coverage on top of a lin
 - `npm install`
 - `npm start` to run the server
 
+## Usage with Channel Engine
+- TBA
+
 ## Environment variables
 - `HOST`: Desired host, default -> localhost
 - `PORT`: Desired port, default -> 8001
