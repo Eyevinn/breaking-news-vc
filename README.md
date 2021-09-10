@@ -5,6 +5,19 @@ a quick switch to a Live stream with a single API call.
 
 This could be used to emulate breaking into a live news coverage on top of a linear channel on Channel Engine, much like traditional TV. 
 
+## Requirements
+- Node v12+
+- TBA
+## Usage
+- `git clone `
+- `cd breaking-news-vc`
+- `npm install`
+- `npm start` to run the server
+
+## Environment variables
+- `HOST`: Desired host, default -> localhost
+- `PORT`: Desired port, default -> 8001
+
 ## API Interfaces
 
 ### Breaking News API Interface
@@ -17,3 +30,6 @@ Resource | Method | Request Payload | Response Payload | Description
 /schedule | GET | n/a | LIST of EVENT JSON | Return all schedule lists. Lists containing EVENT objects.
 /schedule/:channelId | GET | n/a | LIST of EVENT JSON LISTS | Return a schedule list for a particular channel. A list containing EVENT objects.
 /schedule/:channelId | DELETE | n/a | LIST of EVENT JSON | Delete a list for a particular channel.
+
+## Docker 
+- Coming Soon

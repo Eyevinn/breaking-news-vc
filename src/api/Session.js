@@ -7,7 +7,6 @@ class Session {
     this.created = timeStamp;
     this.sessionId = channelId || null;
     this.schedule = [];
-    console.log("::::BOOYAA::: IM BORN::::::")
   }
 
   getID() {

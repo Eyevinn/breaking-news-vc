@@ -6,7 +6,6 @@ class MemoryDBAdapter extends DBAdapter {
     
   async AddSessionToStorage(session) {
     SESSION_STORE[session.sessionId] = session;
-    console.log("::::BOOYAA::: DB IS FATTER::::::")
     return 1;
   }
 

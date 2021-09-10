@@ -195,7 +195,7 @@ module.exports = (fastify, opt, next) => {
       try {
         const session = await DBAdapter.getSession(req.params.channelId);
         if(!session) {
-          reply.code(404).send({message: "Channel with specifed ID was not found."});
+          reply.code(404).send({message: "Schedule for Channel with specifed ID was not found."});
         }
         reply.code(200).send(session.getSchedule());
       } catch (exc) {
@@ -225,7 +225,7 @@ module.exports = (fastify, opt, next) => {
   fastify.post('/breaking', { schema: schemas['POST/breaking'] }, async (request, reply) => {
     try {
       
-      //logger.info(request.body);
+      logger.info(request.body);
       
       if (!request.body.channelId || !request.body.event) {
         reply.code(400).send({ message: "Request body missing channelId or event object" });
