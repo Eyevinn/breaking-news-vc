@@ -8,6 +8,7 @@ This could be used to emulate breaking into a live news coverage on top of a lin
 ## Requirements
 - Node v12+
 - TBA
+- 
 ## Usage
 - `git clone https://github.com/Eyevinn/breaking-news-vc.git`
 - `cd breaking-news-vc`
@@ -30,6 +31,26 @@ Resource | Method | Request Payload | Response Payload | Description
 /schedule | GET | n/a | LIST of EVENT JSON | Return all schedule lists. Lists containing EVENT objects.
 /schedule/:channelId | GET | n/a | LIST of EVENT JSON LISTS | Return a schedule list for a particular channel. A list containing EVENT objects.
 /schedule/:channelId | DELETE | n/a | LIST of EVENT JSON | Delete a list for a particular channel.
+
+#### POST Object Example
+```
+{
+  "channelId": "1",
+  "event": {
+    "eventId": "aaaa-1234-bbbb-1234-cccc-1234",
+    "assetId": "asset_44",
+    "title": "Breaking News 9/12/2021: A Miracle in Disneyland!",
+    "type": 1,
+    "start_time": 1631290137166,
+    "end_time": 1631295137166,
+    "uri": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8",
+    "duration": 30000
+  }
+}
+```
+## Swagger Documentation
+Once server is up and running go to endpoint -> `http://localhost:8001/api/docs/` (depending on what HOST:PORT you chose)
+to view the swagger style documentation. 
 
 ## Docker 
 - Coming Soon
