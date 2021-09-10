@@ -9,7 +9,7 @@ This could be used to emulate breaking into a live news coverage on top of a lin
 - Node v12+
 - TBA
 ## Usage
-- `git clone `
+- `git clone https://github.com/Eyevinn/breaking-news-vc.git`
 - `cd breaking-news-vc`
 - `npm install`
 - `npm start` to run the server
