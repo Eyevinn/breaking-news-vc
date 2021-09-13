@@ -40,6 +40,19 @@ curl -X 'POST' \
 - `VC_PORT`: Desired port for channel engine instance, default -> 8000
 - `API_PORT`: Desired port for Breaking News API, default -> 8001
 
+
+## Docker 
+
+A docker-compose config file is provided that takes care of building the image and running this container.
+
+Start the service:
+
+- `docker-compose up`
+
+Stop the service:
+
+- `docker-compose down`
+
 ## API Interfaces
 
 ### Breaking News API Interface
@@ -72,15 +85,3 @@ Resource | Method | Request Payload | Response Payload | Description
 ## Swagger Documentation
 Once server is up and running go to endpoint -> `http://localhost:8001/api/docs/` (depending on what HOST:PORT you chose)
 to view the swagger style documentation. 
-
-## Docker 
-
-A docker-compose config file is provided that takes care of building the image and running this container.
-
-Start the service:
-
-- `docker-compose up`
-
-Stop the service:
-
-- `docker-compose down`
