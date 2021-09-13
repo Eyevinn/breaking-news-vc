@@ -54,8 +54,8 @@ const EventSchema = () => ({
     assetId: "asset123",
     title: "My Breaking News Live Stream",
     type: 1,
-    start_time: 1631169945698,
-    end_time: 1631169960000,
+    start_time: Date.now(),
+    end_time: Date.now() + 120 * 1000,
     uri: "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8",
     duration: 120000,
   },
@@ -148,12 +148,12 @@ const schemas = {
         event: {
           eventId: "aaaa-1234-bbbb-1234-cccc-1234",
           assetId: "asset_44",
-          title: "Breaking News 9/12/2021: A Miracle in Disneyland!",
+          title: "Breaking News 9/12/2021: Tears of Steel Live 24/7!",
           type: 1,
-          start_time: 1631190600000,
-          end_time: 1631190690000,
-          uri: "mock.eyevinn.streams/live/master.m3u8",
-          duration: 3600
+          start_time: Date.now(),
+          end_time: Date.now() + 5 * 60 * 1000,
+          uri: "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8",
+          duration: 5 * 60 * 1000
         }
       }
     },

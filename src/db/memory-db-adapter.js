@@ -14,7 +14,7 @@ class MemoryDBAdapter extends DBAdapter {
     return sessionList;
   }
 
-  async getSession(sessionId) {
+  getSession(sessionId) {
     const session = SESSION_STORE[sessionId];
     return session;
   }
