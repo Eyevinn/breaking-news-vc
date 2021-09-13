@@ -3,7 +3,7 @@ class DBAdapter {
   
     async getAllSessions(opt) {}
   
-    async getSession(sessionId) {}
+    getSession(sessionId) {}
   
     async DeleteSession(sessionId) {}
   }

@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/Eyevinn/breaking-news-vc#readme",
   "dependencies": {
+    "debug": "^3.2.7",
     "dotenv": "^10.0.0",
+    "eyevinn-channel-engine": "^3.0.0-rc.2",
     "fastify": "^3.21.0",
     "fastify-cors": "^6.0.2",
     "fastify-plugin": "^3.0.0",
