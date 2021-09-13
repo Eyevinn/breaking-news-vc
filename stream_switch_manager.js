@@ -11,7 +11,8 @@ class MyStreamSwitchManager {
     }
 
     getSchedule() {
-        const schedule = DBAdapter.getSession(1);
+        const channelId = 1;
+        const schedule = DBAdapter.getSession(channelId);
         this.schedule = schedule ? schedule.getSchedule() : [];
         return this.schedule;  
     }
