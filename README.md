@@ -37,9 +37,6 @@ curl -X 'POST' \
 }'
 ```
 
-## Usage with Channel Engine
-- TBA
-
 ## Environment variables
 - `HOST`: Desired host, default -> localhost
 - `PORT`: Desired port, default -> 8001
