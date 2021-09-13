@@ -6,6 +6,7 @@ This could be used to emulate breaking into a live news coverage on top of a lin
 
 ## Requirements
 - nodejs v10+
+- Docker (optional)
 ## Usage
 - `git clone https://github.com/Eyevinn/breaking-news-vc.git`
 - `cd breaking-news-vc`
@@ -40,9 +41,27 @@ curl -X 'POST' \
 - `VC_PORT`: Desired port for channel engine instance, default -> 8000
 - `API_PORT`: Desired port for Breaking News API, default -> 8001
 
-## API Interfaces
 
-### Breaking News API Interface
+## Docker Container
+To build the Docker container:
+` docker build -t breaking-news-api:local .`
+
+To run the Docker container with default environment variables run:
+`docker run --rm -p 8000-8001:8000-8001 -e VC_PORT=8000 -e API_PORT=8001 --name breaking_news_poc breaking-news-api:local`
+
+### Docker-Compose
+A docker-compose config file is provided that takes care of building the image and running this container.
+
+Start the service:
+
+- `docker-compose up`
+
+Stop the service:
+
+- `docker-compose down`
+
+
+## Breaking News API Interface
 
 The Channel Engine expects that the Stream Switch Manager API implements the following interface
 
@@ -72,15 +91,3 @@ Resource | Method | Request Payload | Response Payload | Description
 ## Swagger Documentation
 Once server is up and running go to endpoint -> `http://localhost:8001/api/docs/` (depending on what HOST:PORT you chose)
 to view the swagger style documentation. 
-
-## Docker 
-
-A docker-compose config file is provided that takes care of building the image and running this container.
-
-Start the service:
-
-- `docker-compose up`
-
-Stop the service:
-
-- `docker-compose down`
