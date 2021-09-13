@@ -5,9 +5,7 @@ This Application is a Proof-of-Concept on how to use a Stream Switch Manager API
 This could be used to emulate breaking into a live news coverage on top of a linear channel on Channel Engine, much like traditional TV. 
 
 ## Requirements
-- Node v12+
-- TBA
-- 
+- nodejs v10+
 ## Usage
 - `git clone https://github.com/Eyevinn/breaking-news-vc.git`
 - `cd breaking-news-vc`
@@ -39,7 +37,8 @@ curl -X 'POST' \
 
 ## Environment variables
 - `HOST`: Desired host, default -> localhost
-- `PORT`: Desired port, default -> 8001
+- `VC_PORT`: Desired port for channel engine instance, default -> 8000
+- `API_PORT`: Desired port for Breaking News API, default -> 8001
 
 ## API Interfaces
 
@@ -75,4 +74,13 @@ Once server is up and running go to endpoint -> `http://localhost:8001/api/docs/
 to view the swagger style documentation. 
 
 ## Docker 
-- Coming Soon
+
+A docker-compose config file is provided that takes care of building the image and running this container.
+
+Start the service:
+
+- `docker-compose up`
+
+Stop the service:
+
+- `docker-compose down`

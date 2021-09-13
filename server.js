@@ -4,14 +4,7 @@ const fastifyServer = require("./app")({});
 const MyStreamSwitchManager = require("./stream_switch_manager");
 const ChannelEngine = require("eyevinn-channel-engine");
 
-
-// Read from local .env
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
 const STITCH_ENDPOINT = process.env.STITCH_ENDPOINT || "http://lambda.eyevinn.technology/stitch/master.m3u8";
-
 class MyAssetManager {
   constructor(opts) {
 
