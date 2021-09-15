@@ -28,10 +28,10 @@ curl -X 'POST' \
     "assetId": "asset_44",
     "title": "Breaking News 9/12/2021: Tears of Steel Live 24/7!",
     "type": 1,
-    "start_time": <add unix timestamp here>,
-    "end_time": <add unix timestamp here>,
+    "start_time": <(In ms) add unix timestamp here>,
+    "end_time": <(In ms) add unix timestamp here>,
     "uri": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8",
-    "duration": <optional with when using type=1>
+    "duration": <(In ms) optional with when using type=1>
   }
 }'
 ```
