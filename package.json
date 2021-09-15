@@ -1,6 +1,6 @@
 {
   "name": "breaking-news-vc",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "This Application to be used together with the Eyevinn Channel-Engine V3 as its `StreamSwitchManager`. This is a simple example implementation for a stream switch manager that enables\r a quick switch to a Live stream with a single API call.",
   "main": "app.js",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Eyevinn/breaking-news-vc/issues"
   },
