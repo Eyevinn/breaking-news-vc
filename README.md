@@ -1,6 +1,6 @@
 # breaking-news-vc
 
-This Application is a Proof-of-Concept on how to use a Stream Switch Manager API with the Eyevinn Channel-Engine V3 Release Candidate, as its `StreamSwitchManager`. This API is a simple example implementation for a stream switch manager that enables a quick switch to a Live stream with a single API POST call. 
+This Application is a Proof-of-Concept on how to use a Stream Switch Manager API with the **Eyevinn Channel-Engine V3 Release Candidate**, as its `StreamSwitchManager`. This API is a simple example implementation for a stream switch manager that enables a quick switch to a Live stream with a single API POST call. 
 
 This could be used to emulate breaking into a live news coverage on top of a linear channel on Channel Engine, much like traditional TV. 
 
