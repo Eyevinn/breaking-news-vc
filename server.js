@@ -66,11 +66,11 @@ const run = async () => {
     const port = process.env.VC_PORT || 8000
 
     engine.start();
-    console.log("VC listening on port " + port + "...\nPlayback on: http://localhost:8000/live/master.m3u8?channel=1 ...");
+    console.log("...VC listening on port " + port + "\n...Playback on: http://localhost:8000/live/master.m3u8?channel=1 \n");
     engine.listen(port);
 
     const address = await fastifyServer.listen(process.env.PORT || 8001, process.env.HOST || "0.0.0.0");
-    console.log(`Breaking News API is listening at ${address}...`);
+    console.log(`\n...Breaking News API is listening at ${address}\n`);
 
   } catch (err) {
     fastifyServer.log.error(err);

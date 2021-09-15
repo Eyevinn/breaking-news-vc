@@ -120,7 +120,7 @@ const schemas = {
     ],
     response: {
       204: {},
-      404: BadRequestSchema(),
+      404: BadRequestSchema("Schedule for Channel with specifed ID was not found."),
     }
   },
   'POST/breaking': {
@@ -162,7 +162,7 @@ const schemas = {
         channelId: { type: "string", example: "1" },
         event: EventSchema()
       },
-      409: BadRequestSchema(),
+      409: BadRequestSchema("Request body missing required fields in object."),
     },
     security: [
       { apiKey: [] }
@@ -208,7 +208,7 @@ module.exports = (fastify, opt, next) => {
 
   fastify.delete('/schedule/:channelId', { schema: schemas['DELETE/schedule/:channelId'] }, async (request, reply) => {
     try {
-      logger.info(request.params);
+      logger.info(request.params, { label: request.headers['host'], chId: request.params.channelId });
       let session = await DBAdapter.getSession(request.params.channelId);
       if (!session) {
         reply.code(404).send({ message: `Channel with ID ${request.params.channelId} was not found` });
