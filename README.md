@@ -44,9 +44,11 @@ curl -X 'POST' \
 
 ## Docker Container
 To build the Docker container:
+
 ` docker build -t breaking-news-api:local .`
 
 To run the Docker container with default environment variables run:
+
 `docker run --rm -p 8000-8001:8000-8001 -e VC_PORT=8000 -e API_PORT=8001 --name breaking_news_poc breaking-news-api:local`
 
 ### Docker-Compose
