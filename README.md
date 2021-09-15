@@ -37,7 +37,7 @@ curl -X 'POST' \
 ```
 
 ## Environment variables
-- `HOST`: Desired host, default -> localhost
+- `HOST`: Desired API host, default -> localhost
 - `VC_PORT`: Desired port for channel engine instance, default -> 8000
 - `API_PORT`: Desired port for Breaking News API, default -> 8001
 
