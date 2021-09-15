@@ -159,7 +159,7 @@ const schemas = {
     },
     response: {
       200: {
-        channelId: { type: "string" },
+        channelId: { type: "string", example: "1" },
         event: EventSchema()
       },
       409: BadRequestSchema(),
@@ -177,12 +177,13 @@ module.exports = (fastify, opt, next) => {
   fastify.get(
     "/schedule",
     { schema: schemas["GET/schedules"] },
-    async (req, reply) => {
+    async (request, reply) => {
       try {
         const sessionList = await DBAdapter.getAllSessions();
         const allSchedules = sessionList.map( session => session.getSchedule() );
         reply.code(200).send(allSchedules);
       } catch (exc) {
+        logger.error(exc, { label: request.headers['host'] });
         reply.code(500).send({ message: exc.message });
       }
     }
@@ -191,14 +192,15 @@ module.exports = (fastify, opt, next) => {
   fastify.get(
     "/schedule/:channelId",
     { schema: schemas["GET/schedule/:channelId"] },
-    async (req, reply) => {
+    async (request, reply) => {
       try {
-        const session = await DBAdapter.getSession(req.params.channelId);
+        const session = await DBAdapter.getSession(request.params.channelId);
         if(!session) {
           reply.code(404).send({message: "Schedule for Channel with specifed ID was not found."});
         }
         reply.code(200).send(session.getSchedule());
       } catch (exc) {
+        logger.error(exc, { label: request.headers['host'], chId: request.params.channelId });
         reply.code(500).send({ message: exc.message });
       }
     }
@@ -215,17 +217,15 @@ module.exports = (fastify, opt, next) => {
         reply.send(204);
       }
     } catch (exc) {
-      logger.error(exc);
+      logger.error(exc, { label: request.headers['host'], chId: request.params.channelId });
       reply.code(500).send({ message: exc.message });
     }
   });
 
-  // curl --header "Content-Type: application/json"  --request POST --data '{ "channelId": "1", "event": { "eventId": "aaaa-1234-bbbb-1234-cccc-1234", "assetId": "asset_44", "title": "Breaking News 9/12/2021: A Miracle in Disneyland!", "type": 1, "start_time": 1631190600000, "end_time": 1631190690000, "uri": "mock.eyevinn.streams/live/master.m3u8", "duration": 3600 } }' http://localhost:8001/api/v1/breaking
-
   fastify.post('/breaking', { schema: schemas['POST/breaking'] }, async (request, reply) => {
     try {
       
-      logger.info(request.body);
+      logger.info(request.body, { label: request.headers['host'], chId: request.body.channelId });
       
       if (!request.body.channelId || !request.body.event) {
         reply.code(400).send({ message: "Request body missing channelId or event object" });
@@ -252,9 +252,9 @@ module.exports = (fastify, opt, next) => {
       session.AddEventToSchedule(eventObject);
       await DBAdapter.AddSessionToStorage(session);
 
-      reply.send(eventObject);
+      reply.code(200).send({ channelId: channelId, event: eventObject });
     } catch (exc) {
-      logger.error(exc);
+      logger.error(exc, { label: request.headers['host'], chId: request.params.channelId });
       reply.code(500).send({ message: exc.message });
     }
   });
