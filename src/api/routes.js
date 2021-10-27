@@ -230,17 +230,24 @@ module.exports = (fastify, opt, next) => {
       if (!request.body.channelId || !request.body.event) {
         reply.code(400).send({ message: "Request body missing channelId or event object" });
       }
-      if (!request.body.event['uri'] || !request.body.event['start_time'] || !request.body.event['end_time'] || !request.body.event['type']) {
+      if (!request.body.event['uri'] || !request.body.event['type']) {
         reply.code(400).send({ message: "Request body missing required fields in object." });
       }
+      let start_time = request.body.event['start_time'];
+      let end_time = request.body.event['end_time'];
+      if (!start_time) {
+        start_time = Date.now() + (10 * 1000);
+        end_time = start_time + request.body.event['duration'];
+      }
+      
       const channelId =  request.body.channelId;
       const eventObject = {
         eventId: request.body.event['eventId'] || uuidv4(),
         assetId: request.body.event['assetId'] || "unknown",
         title: request.body.event['title'] || "untitled",
         type: request.body.event['type'] || null,
-        start_time: request.body.event['start_time'] || null,
-        end_time: request.body.event['end_time'] || null,
+        start_time: start_time,
+        end_time: end_time,
         uri: request.body.event['uri'] || null,
         duration: request.body.event['duration'] || null,
       }
