@@ -15,11 +15,11 @@ class MyAssetManager {
       const payload = {
         uri: "https://maitv-vod.lab.eyevinn.technology/MORBIUS_Trailer_2020.mp4/master.m3u8",
         breaks: [
-          // {
-          //   pos: 0,
-          //   duration: 105 * 1000,
-          //   url: "https://maitv-vod.lab.eyevinn.technology/VINN.mp4/master.m3u8"
-          // }
+          {
+            pos: 0,
+            duration: 105 * 1000,
+            url: "https://maitv-vod.lab.eyevinn.technology/VINN.mp4/master.m3u8"
+          }
         ]
       };
       const buff = Buffer.from(JSON.stringify(payload));
